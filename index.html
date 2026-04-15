@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - 第一个HTML页面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 20px;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            color: #FFD700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #f0f0f0;
+            line-height: 1.5;
+        }
+        
+        .code-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 5px solid #FFD700;
+            overflow-x: auto;
+        }
+        
+        .code-container h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        pre {
+            color: #f8f8f2;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            white-space: pre;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+        
+        .tag {
+            color: #569cd6;
+        }
+        
+        .attribute {
+            color: #9cdcfe;
+        }
+        
+        .value {
+            color: #ce9178;
+        }
+        
+        .content {
+            color: #d4d4d4;
+        }
+        
+        .info-box {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 5px solid #FFD700;
+        }
+        
+        .info-box h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 180px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 215, 0, 0.2);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            font-size: 1rem;
+        }
+        
+        footer {
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            pre {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-globe"></i> Hello World!</h1>
+        <p class="subtitle">欢迎来到Web开发的世界！这是你的第一个HTML页面。</p>
+        
+        <div class="code-container">
+            <h3><i class="fas fa-code"></i> HTML源代码</h3>
+            <pre><code><span class="comment">&lt;!-- 这是一个基本的HTML5文档结构 --&gt;</span>
+&lt;!DOCTYPE <span class="tag">html</span>&gt;
+&lt;<span class="tag">html</span> <span class="attribute">lang</span>=<span class="value">"zh-CN"</span>&gt;
+&lt;<span class="tag">head</span>&gt;
+    &lt;<span class="tag">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;
+    &lt;<span class="tag">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span>&gt;
+    &lt;<span class="tag">title</span>&gt;<span class="content">Hello World页面</span>&lt;/<span class="tag">title</span>&gt;
+&lt;/<span class="tag">head</span>&gt;
+&lt;<span class="tag">body</span>&gt;
+    &lt;<span class="tag">h1</span>&gt;<span class="content">Hello World!</span>&lt;/<span class="tag">h1</span>&gt;
+    &lt;<span class="tag">p</span>&gt;<span class="content">这是我的第一个HTML页面。</span>&lt;/<span class="tag">p</span>&gt;
+&lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;</code></pre>
+        </div>
+        
+        <div class="info-box">
+            <h3><i class="fas fa-info-circle"></i> HTML基础信息</h3>
+            <p>HTML (超文本标记语言) 是构建网页的标准标记语言。</p>
+            <p>一个基本的HTML文档包含以下部分：</p>
+            <p>1. <strong>DOCTYPE声明</strong>：定义文档类型和HTML版本</p>
+            <p>2. <strong>html元素</strong>：整个HTML文档的根元素</p>
+            <p>3. <strong>head元素</strong>：包含文档的元数据，如标题和字符集</p>
+            <p>4. <strong>body元素</strong>：包含网页的可见内容</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-laptop-code"></i>
+                <p>响应式设计</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-palette"></i>
+                <p>渐变背景动画</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <p>移动设备友好</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-code"></i>
+                <p>语法高亮代码</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Hello World HTML示例 | 使用HTML5, CSS3和JavaScript创建</p>
+        <p style="margin-top: 5px;">这是一个演示页面，展示了基本的HTML结构和样式设计。</p>
+    </footer>
+
+    <script>
+        // 为Hello World标题添加交互效果
+        const helloWorld = document.querySelector('h1');
+        
+        helloWorld.addEventListener('click', function() {
+            this.style.color = this.style.color === 'rgb(255, 215, 0)' ? '#ff6b6b' : '#FFD700';
+        });
+        
+        // 为每个功能卡片添加点击效果
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+        
+        // 动态更新年份
+        document.querySelector('footer p').textContent = `© ${new Date().getFullYear()} Hello World HTML示例 | 使用HTML5, CSS3和JavaScript创建`;
+        
+        // 添加控制台欢迎消息
+        console.log('%c👋 Hello World!', 'font-size: 24px; color: #FFD700; font-weight: bold;');
+        console.log('%c欢迎来到Web开发的世界！这是一个简单的HTML示例。', 'font-size: 16px; color: #4ECDC4;');
+    </script>
+</body>
+</html>
